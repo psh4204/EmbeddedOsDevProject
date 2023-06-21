@@ -2,7 +2,7 @@
 
 Let's make ARM RTOS!
 - Book : [Embedded OS development project](https://blog.insightbook.co.kr/2019/12/19/19944/)
-- Clone : [Navios](https://github.com/navilera/Navilos)
+- Clone : [Navilos](https://github.com/navilera/Navilos)
 - Board with QEMU : [RealView Platform Baseboard](https://developer.arm.com/documentation/dui0417/d/)
 - My Note : Comming soooooooooooon
 
