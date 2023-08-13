@@ -25,7 +25,7 @@ run: $(navilos)
 	qemu-system-arm -M realview-pb-a8 -kernel $(navilos)
 
 debug: $(navilos)
-	qemu-system-arm -M realview-pb-a8 -kernel $(navilos) -S -gdb tcp::1234,ipv4
+	qemu-system-arm -M realview-pb-a8 -kernel $(navilos) -S -gdb tcp::1234,ipv4 -display none
 
 gdb:
 	arm-none-eabi-gdb
