@@ -9,7 +9,7 @@ Let's make ARM RTOS!
 ## TODO List
 - [X] 1. Embedded OS
 - [X] 2. Building development environment
-- [ ] 3. Just... Start
+- [X] 3. Just... Start
 - [ ] 4. Boot
 - [ ] 5. UART
 - [ ] 6. Interrupt
