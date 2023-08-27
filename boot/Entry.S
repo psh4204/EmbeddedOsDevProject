@@ -61,7 +61,10 @@
     BIC r1, r0, #0x1F                   @ PSR Mode Reset
     ORR r1, r1, #ARM_MODE_BIT_SYS       @ SYS모드 Set (USR SYS)
     MSR cpsr, r1                        @ cpsr <- r1
-    LDR sp, =USRSYS_STACK_TOP           @ sp = USRSYS 스택 최상단 주소로
+    LDR sp, =USRSYS_STACK_TOP           @ sp = USRSYS 스택 최상단 주소로.
+
+    @Go to Main
+    BL main                             @ LR = Main
 
     @ dummy_handler 레이블  
     dummy_handler:
