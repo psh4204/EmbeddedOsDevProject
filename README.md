@@ -10,7 +10,7 @@ Let's make ARM RTOS!
 - [X] 1. Embedded OS
 - [X] 2. Building development environment
 - [X] 3. Just... Start
-- [ ] 4. Boot
+- [X] 4. Boot
 - [ ] 5. UART
 - [ ] 6. Interrupt
 - [ ] 7. Timer
