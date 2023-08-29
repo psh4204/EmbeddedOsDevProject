@@ -1,11 +1,9 @@
 #include "stdint.h"
-
 #include "HalUart.h"
 
-static void Hw_init(void)
-{
-    Hal_uart_init();
-}
+#include "stdio.h"
+
+static void Hw_init(void);
 
 void main(void)
 {
@@ -16,4 +14,12 @@ void main(void)
     {
         Hal_uart_put_char('Y');
     }
+    Hal_uart_put_char('\n');                // char = '' ..?
+
+    putstr("oh! Hell no..!\n");             // string = ""  ...???
+}
+
+static void Hw_init(void)
+{
+    Hal_uart_init();
 }
