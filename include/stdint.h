@@ -300,4 +300,6 @@ typedef unsigned long long int	uintmax_t;
 #  define UINTMAX_C(c)	c ## ULL
 # endif
 
+#define NULL ((void*)0)
+
 #endif /* stdint.h */

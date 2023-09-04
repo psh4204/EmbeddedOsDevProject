@@ -11,7 +11,7 @@ Let's make ARM RTOS!
 - [X] 2. Building development environment
 - [X] 3. Just... Start
 - [X] 4. Boot
-- [ ] 5. UART
+- [X] 5. UART
 - [ ] 6. Interrupt
 - [ ] 7. Timer
 - [ ] 8. Task

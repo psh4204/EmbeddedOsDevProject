@@ -5,7 +5,7 @@ TARGET = rvpb
 
 CC = arm-none-eabi-gcc
 AS = arm-none-eabi-as
-LD = arm-none-eabi-ld
+LD = arm-none-eabi-gcc
 OC = arm-none-eabi-objcopy
 
 LINKER_SCRIPT = ./navilos.ld
@@ -29,6 +29,7 @@ INC_DIRS  = -I include 			\
             -I lib
 
 CFLAGS = -c -g -std=c11
+LDFLAGS = -nostartfiles -nostdlib -nodefaultlibs -static -lgcc
 
 navilos = build/navilos.axf
 navilos_bin = build/navilos.bin
@@ -48,16 +49,19 @@ debug: $(navilos)
 	
 gdb:
 	arm-none-eabi-gdb
+
+kill:
+	kill -9 `ps aux | grep 'qemu' | awk 'NR==1{print $$2}'`
 	
 $(navilos): $(ASM_OBJS) $(C_OBJS) $(LINKER_SCRIPT)
-	$(LD) -n -T $(LINKER_SCRIPT) -o $(navilos) $(ASM_OBJS) $(C_OBJS) -Map=$(MAP_FILE)
+	$(LD) -n -T $(LINKER_SCRIPT) -o $(navilos) $(ASM_OBJS) $(C_OBJS) -Wl,-Map=$(MAP_FILE) $(LDFLAGS)
 	$(OC) -O binary $(navilos) $(navilos_bin)
 	
 build/%.os: %.S
 	mkdir -p $(shell dirname $@)
-	$(CC) -march=$(ARCH) -mcpu=$(MCPU) $(INC_DIRS) $(CFLAGS) -o $@ $<
+	$(CC) -march=$(ARCH) -mcpu=$(MCPU) -marm $(INC_DIRS) $(CFLAGS) -o $@ $<
 	
 build/%.o: %.c
 	mkdir -p $(shell dirname $@)
-	$(CC) -march=$(ARCH) -mcpu=$(MCPU) $(INC_DIRS) $(CFLAGS) -o $@ $<
+	$(CC) -march=$(ARCH) -mcpu=$(MCPU) -marm $(INC_DIRS) $(CFLAGS) -o $@ $<
 	
