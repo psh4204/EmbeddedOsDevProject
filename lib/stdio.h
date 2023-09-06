@@ -3,15 +3,11 @@
 
 #include "stdarg.h"
 
-#define PRINTF_BUF_LEN  1024
-
 typedef enum utoa_t
 {
     utoa_dec = 10,
     utoa_hex = 16,
-}utoa_t;
-
-static char printf_buf[PRINTF_BUF_LEN];   // 1KB
+} utoa_t;
 
 uint32_t putstr(const char* s);
 uint32_t debug_printf(const char* format, ...);

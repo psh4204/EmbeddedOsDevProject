@@ -12,7 +12,8 @@ Let's make ARM RTOS!
 - [X] 3. Just... Start
 - [X] 4. Boot
 - [X] 5. UART
-- [ ] 6. Interrupt
+- [X] 6. Interrupt
+    - TODO : (Error) Debug
 - [ ] 7. Timer
 - [ ] 8. Task
 - [ ] 9. Scheduler
