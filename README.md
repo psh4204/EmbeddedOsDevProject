@@ -13,11 +13,14 @@ Let's make ARM RTOS!
 - [X] 4. Boot
 - [X] 5. UART
 - [X] 6. Interrupt
-    - TODO : (Error) Debug
-- [ ] 7. Timer
+- [X] 7. Timer
 - [ ] 8. Task
 - [ ] 9. Scheduler
 - [ ] 10. Context switch
 - [ ] 11. Event
 - [ ] 12. Message       
 - [ ] 13. Synchronize
+
+---
+## Note
+- Interrupt is not working.. (TODO: Debug chapter 6 ~)
