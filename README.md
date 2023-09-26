@@ -14,7 +14,7 @@ Let's make ARM RTOS!
 - [X] 5. UART
 - [X] 6. Interrupt
 - [X] 7. Timer
-- [ ] 8. Task
+- [X] 8. Task
 - [ ] 9. Scheduler
 - [ ] 10. Context switch
 - [ ] 11. Event
