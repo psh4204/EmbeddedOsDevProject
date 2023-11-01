@@ -54,14 +54,18 @@ static void interrupt_handler(void)
 {
     uint8_t ch = Hal_uart_get_char();
     
+    if(ch == 'U')
+    {
+        Kernel_send_events(KernelEventFlag_Unlock);
+        return;   
+    }
+
     if(ch != 'X')
     {
-        Hal_uart_put_char(ch);
-        Kernel_send_msg(KernelMsgQ_Task0, &ch, 1);
-        Kernel_send_events(KernelEventFlag_UartIn);
-    }
-    else
-    {
         Kernel_send_events(KernelEventFlag_CmdOut);
+        return;
     }
+    Hal_uart_put_char(ch);
+    Kernel_send_msg(KernelMsgQ_Task0, &ch, 1);
+    Kernel_send_events(KernelEventFlag_UartIn);
 }

@@ -105,3 +105,8 @@ void Kernel_task_start(void)
     sNext_tcb = &sTask_list[sCurrent_tcb_index];
     Restore_context();
 }
+
+uint32_t Kernel_task_get_current_task_id(void)
+{
+    return sCurrent_tcb_index;
+}

@@ -18,5 +18,5 @@ Let's make ARM RTOS!
 - [X] 9. Scheduler
 - [X] 10. Context switch
 - [X] 11. Event
-- [ ] 12. Message       
-- [ ] 13. Synchronize
+- [X] 12. Message       
+- [X] 13. Synchronize
